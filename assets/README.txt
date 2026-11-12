@@ -48,6 +48,14 @@ Everything you edit lives in:
    Same idea: 01.jpg is the cover, the rest are the variants/mockups.
 
 
+   PUBLICAR (Cloudflare Pages)
+   Workers & Pages -> Create -> Pages -> Upload assets -> arrastar esta pasta.
+   Ou ligar ao GitHub (RomelNeto/portfolio-website): preset None, build command
+   vazio, output "/" — actualiza a cada push.
+   O ficheiro _headers já configura cache e cabeçalhos; NÃO usar
+   "Referrer-Policy: no-referrer", senão o YouTube dá erro 153.
+
+
 0) VER O SITE NO COMPUTADOR  (importante)
 
    Abrir o index.html com duplo-clique mostra o site, mas os vídeos do YouTube

@@ -46,8 +46,32 @@ python3 -m http.server 8000
 
 On macOS you can double-click `abrir-site.command` instead.
 
-## Deploy
+## Deploy — Cloudflare Pages
 
-Any static host works (GitHub Pages, Cloudflare Pages, Netlify) — upload the folder as is.
+No build step: the folder is served as is. Two ways:
 
-For GitHub Pages: **Settings → Pages → Source: Deploy from a branch → main / (root)**.
+**A. Upload (fastest, no build config)**
+
+1. [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Upload assets**
+2. Drag this folder in → **Deploy site**
+3. Live at `https://<project>.pages.dev`
+
+**B. Connected to Git (auto-deploy on every push)**
+
+1. **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Pick `RomelNeto/portfolio-website`
+3. Framework preset: **None** · Build command: *(leave empty)* · Build output directory: **/**
+4. **Save and Deploy**
+
+Every `git push` to `main` republishes the site.
+
+### Files Cloudflare reads automatically
+
+- `_headers` — cache for `/assets/*` and security headers. Do **not** set
+  `Referrer-Policy: no-referrer`: the YouTube/Vimeo players need the referrer,
+  otherwise they fail with **error 153**.
+- There is no `_redirects` and no build output folder — everything is at the root.
+
+### Limits
+
+25 MiB per file, 20 000 files. This site: ~33 MB, 214 files, largest file ~380 KB.
