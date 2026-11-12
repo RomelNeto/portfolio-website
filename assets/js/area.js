@@ -35,6 +35,7 @@
   var emptyState = $("#emptyState");
   var countEl = $("#workCount");
   var shortsWrap = $("#shortsWrap");
+  var filmsWrap = $("#filmsWrap");
   var shortsGrid = $("#shortsGrid");
   var shortsCount = $("#shortsCount");
   var landscape = [];
@@ -63,6 +64,8 @@
     }
 
     if (emptyState) emptyState.hidden = visible.length > 0;
+
+    if (filmsWrap) filmsWrap.hidden = landscape.length === 0;
 
     if (!landscape.length) {
       grid.innerHTML = "";
