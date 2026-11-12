@@ -60,7 +60,8 @@ No build step: the folder is served as is. Two ways:
 
 1. **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
 2. Pick `RomelNeto/portfolio-website`
-3. Framework preset: **None** · Build command: *(leave empty)* · Build output directory: **/**
+3. Framework preset: **None** · Build command: **`exit 0`** · Build output directory: **`/`**
+   (`exit 0` is Cloudflare's own recommendation for sites without a build step)
 4. **Save and Deploy**
 
 Every `git push` to `main` republishes the site.
