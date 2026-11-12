@@ -57,7 +57,7 @@
             '<span class="area-num">' + esc(area.kicker) + "</span>" +
             '<span class="area-name">' + esc(area.label) + "</span>" +
             '<span class="area-blurb">' + esc(area.blurb) + "</span>" +
-            '<span class="area-foot"><span>' + items.length + " projects</span><span>Explore ↗</span></span>" +
+            '<span class="area-foot"><span>' + items.length + " " + esc(RN.T("projects")) + "</span><span>" + esc(RN.T("explore")) + "</span></span>" +
           "</span>" +
         "</a>"
       );
@@ -79,8 +79,8 @@
       youtube: REEL.youtube,
       vimeo: REEL.vimeo,
       title: REEL.title,
-      meta: "Direction · Camera · Edit · Color",
-      note: REEL.video ? "" : "The showreel is still being cut — this is the poster frame."
+      meta: RN.T("reelMeta"),
+      note: REEL.video ? "" : RN.T("showreelNote")
     }], 0, trigger);
   }
 
@@ -125,19 +125,20 @@
       var msg = $("#cfMsg").value.trim();
 
       if (!name || !email || !msg) {
-        RN.toast("Please fill in your name, email and project details.");
+        RN.toast(RN.T("fillForm"));
         return;
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        RN.toast("That email address doesn't look right.");
+        RN.toast(RN.T("badEmail"));
         return;
       }
 
       var subject = type + " — " + name;
-      var body = "Name: " + name + "\nEmail: " + email + "\nProject: " + type + "\n\n" + msg;
+      var body = RN.T("mailName") + ": " + name + "\n" + RN.T("mailEmail") + ": " + email +
+        "\n" + RN.T("mailProject") + ": " + type + "\n\n" + msg;
       window.location.href = "mailto:netoromel@gmail.com?subject=" +
         encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      RN.toast("Opening your email app…");
+      RN.toast(RN.T("openingMail"));
     });
   }
 

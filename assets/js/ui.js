@@ -17,6 +17,34 @@
     });
   }
 
+  /* Texto de interface: inglês por omissão, português nas páginas /pt/ */
+  var EN_T = {
+    all: "All", project: "project", projects: "projects", short: "short", shorts: "shorts",
+    photos: "photos", photo: "photo", inProduction: "In production", looping: "Looping",
+    reelComingSoon: "Reel coming soon", play: "Play", pause: "Pause", watchOn: "Watch on YouTube ↗",
+    showreelNote: "The showreel is still being cut — this is the poster frame.",
+    videoSoon: "Video coming soon — the preview still is shown until the final cut is online.",
+    explore: "Explore ↗", openPhoto: "Open photo", goToPhoto: "Go to photo",
+    fillForm: "Please fill in your name, email and project details.",
+    badEmail: "That email address doesn't look right.",
+    openingMail: "Opening your email app…",
+    mailName: "Name", mailEmail: "Email", mailProject: "Project",
+    reelMeta: "Direction · Camera · Edit · Color",
+    themeDark: "Switch to dark theme", themeLight: "Switch to light theme",
+    beingCut: "Being cut right now", requestReel: "Request the full reel"
+  };
+  var PT_T = window.RN_PT && window.RN_PT.ui;
+
+  function T(key) {
+    if (PT_T && PT_T[key]) return PT_T[key];
+    return EN_T[key] || key;
+  }
+
+  function sectorLabel(sector) {
+    if (window.RN_PT && window.RN_PT.sectors[sector]) return window.RN_PT.sectors[sector];
+    return sector;
+  }
+
   /* ---------------- Theme ---------------- */
   var root = document.documentElement;
   var themeBtn = $("#themeBtn");
@@ -27,7 +55,7 @@
   function syncThemeLabel() {
     if (!themeBtn) return;
     var isLight = root.getAttribute("data-theme") === "light";
-    themeBtn.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    themeBtn.setAttribute("aria-label", isLight ? T("themeDark") : T("themeLight"));
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", isLight ? "#f4f1ea" : "#0a0a0b");
   }
@@ -135,7 +163,7 @@
         "<p>The player needs a real web address. Open the site with <b>abrir-site.command</b> " +
         "(double-click it) or upload the site — it works normally once hosted.</p>" +
         '<a class="btn btn--primary" href="' + esc(watchUrl) + '" target="_blank" rel="noopener">' +
-          "Watch on YouTube ↗</a>" +
+          esc(T("watchOn")) + "</a>" +
       "</div>"
     );
   }
@@ -280,7 +308,7 @@
 
     var note = "";
     if ((project.category === "video" || project.category === "motion") && !project.video && !project.youtube && !project.vimeo) {
-      note = "Video coming soon — the preview still is shown until the final cut is online.";
+      note = T("videoSoon");
     }
 
     return [{
@@ -317,7 +345,7 @@
         '<span class="card-media">' +
           '<img src="' + esc(project.image) + '" alt="' + esc(project.title) + '" loading="lazy" decoding="async">' +
           (isVideo ? '<span class="play-badge" aria-hidden="true"><i></i></span>' : "") +
-          (photos && !isVideo ? '<span class="card-badge">' + photos + " photos</span>" : "") +
+          (photos && !isVideo ? '<span class="card-badge">' + photos + " " + T("photos") + "</span>" : "") +
           verticalTag +
         "</span>" +
         '<span class="card-cap">' +
@@ -350,11 +378,11 @@
 
   function renderFilters(container, sectors, current, onSelect) {
     var html = '<button class="filter' + (current === "all" ? " is-active" : "") +
-      '" type="button" data-sector="all" aria-pressed="' + (current === "all") + '">All</button>';
+      '" type="button" data-sector="all" aria-pressed="' + (current === "all") + '">' + esc(T("all")) + "</button>";
     html += sectors.map(function (sector) {
       var on = sector === current;
       return '<button class="filter' + (on ? " is-active" : "") + '" type="button" data-sector="' +
-        esc(sector) + '" aria-pressed="' + on + '">' + esc(sector) + "</button>";
+        esc(sector) + '" aria-pressed="' + on + '">' + esc(sectorLabel(sector)) + "</button>";
     }).join("");
     container.innerHTML = html;
     container.addEventListener("click", function (e) {
@@ -392,6 +420,8 @@
     openProject: openProject,
     projectSlides: projectSlides,
     renderGrid: renderGrid,
+    T: T,
+    sectorLabel: sectorLabel,
     renderFilters: renderFilters,
     bindGrid: bindGrid
   };

@@ -1104,3 +1104,66 @@ const CATEGORY_LABELS = {
   design: "Design",
   motion: "Motion"
 };
+
+
+/* ==========================================================================
+   TRADUÇÃO — só corre nas páginas de /pt/, onde o i18n-pt.js é carregado
+   antes deste ficheiro. Os caminhos das imagens ganham ../ porque as páginas
+   vivem numa pasta abaixo.
+   ========================================================================== */
+(function () {
+  var pt = window.RN_PT;
+  if (!pt) return;
+
+  function path(p) { return p ? "../" + p : p; }
+
+  function translateDescription(text) {
+    if (!text) return text;
+    if (pt.descriptions[text]) return pt.descriptions[text];
+    var out = text;
+    pt.phrases.forEach(function (pair) {
+      if (out.indexOf(pair[0]) !== -1) out = out.split(pair[0]).join(pair[1]);
+    });
+    return out;
+  }
+
+  function translateRole(role) {
+    if (!role) return role;
+    return role.split(" · ").map(function (part) {
+      return pt.roles[part] || part;
+    }).join(" · ");
+  }
+
+  PROJECTS.forEach(function (p) {
+    if (pt.titles[p.title]) p.title = pt.titles[p.title];
+    p.role = translateRole(p.role);
+    if (p.description) p.description = translateDescription(p.description);
+    p.image = path(p.image);
+    if (p.gallery) p.gallery = p.gallery.map(path);
+  });
+
+  PHOTO_SLIDESHOW.forEach(function (s) {
+    if (pt.titles[s.title]) s.title = pt.titles[s.title];
+    if (s.caption) {
+      var bits = s.caption.split(" · ");
+      s.caption = (pt.sectors[bits[0]] || bits[0]) + (bits[1] ? " · " + bits[1] : "");
+    }
+    s.image = path(s.image);
+  });
+
+  Object.keys(AREAS).forEach(function (key) {
+    var area = AREAS[key];
+    area.cover = path(area.cover);
+    if (pt.areas[key]) {
+      area.label = pt.areas[key].label;
+      area.blurb = pt.areas[key].blurb;
+    }
+  });
+
+  REEL.poster = path(REEL.poster);
+  if (REEL.video) REEL.video = path(REEL.video);
+
+  Object.keys(pt.categories).forEach(function (key) {
+    CATEGORY_LABELS[key] = pt.categories[key];
+  });
+})();

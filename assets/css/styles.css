@@ -853,18 +853,24 @@ h2 {
 }
 .direct-item:hover b { color: var(--accent); }
 
-.socials { display: flex; flex-wrap: wrap; gap: 8px; }
-.socials a {
-  display: inline-block;
-  padding: 9px 16px;
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: border-color .25s, color .25s, background-color .25s;
+  color: color-mix(in srgb, var(--text) 72%, transparent);
+  transition: border-color .25s, color .25s;
 }
-.socials a:hover { border-color: var(--text); }
+.lang-switch:hover { border-color: var(--line-strong); color: var(--text); }
 
 .form { display: grid; gap: 14px; align-content: start; }
 .field { display: grid; gap: 7px; }

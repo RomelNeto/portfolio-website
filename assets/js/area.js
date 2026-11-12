@@ -43,7 +43,7 @@
 
   function updateCount() {
     if (!countEl) return;
-    countEl.textContent = visible.length + (visible.length === 1 ? " project" : " projects");
+    countEl.textContent = visible.length + " " + (visible.length === 1 ? RN.T("project") : RN.T("projects"));
   }
 
   function paint() {
@@ -56,7 +56,7 @@
     if (shortsWrap) {
       shortsWrap.hidden = portrait.length === 0;
       if (portrait.length) {
-        if (shortsCount) shortsCount.textContent = portrait.length + (portrait.length === 1 ? " short" : " shorts");
+        if (shortsCount) shortsCount.textContent = portrait.length + " " + (portrait.length === 1 ? RN.T("short") : RN.T("shorts"));
         RN.renderGrid(shortsGrid, portrait, { showCategory: false });
       } else {
         shortsGrid.innerHTML = "";
@@ -92,14 +92,14 @@
 
   if (grid && !projects.length && area.comingSoon) {
     if (filtersEl) filtersEl.remove();
-    if (countEl) countEl.textContent = "In production";
+    if (countEl) countEl.textContent = RN.T("inProduction");
     var panel = document.createElement("div");
     panel.className = "soon";
     panel.innerHTML =
-      '<p class="kicker">In production</p>' +
-      "<h3>Being cut right now</h3>" +
+      '<p class="kicker">' + esc(RN.T("inProduction")) + "</p>" +
+      "<h3>" + esc(RN.T("beingCut")) + "</h3>" +
       "<p>" + esc(area.comingSoon) + "</p>" +
-      '<a class="btn btn--ghost" href="index.html#contact">Request the full reel</a>';
+      '<a class="btn btn--ghost" href="index.html#contact">" + esc(RN.T("requestReel")) + "</a>';
     grid.parentNode.insertBefore(panel, grid);
     grid.remove();
     panel.classList.add("reveal");
@@ -138,10 +138,10 @@
       loopVideo.src = loopVideo.dataset.src;
       loopVideo.addEventListener("playing", function () {
         loop.classList.add("is-playing");
-        if (loopTag) loopTag.textContent = "Looping";
+        if (loopTag) loopTag.textContent = RN.T("looping");
       }, { once: true });
       loopVideo.addEventListener("error", function () {
-        if (loopTag) loopTag.textContent = "Reel coming soon";
+        if (loopTag) loopTag.textContent = RN.T("reelComingSoon");
       }, { once: true });
       var playing = loopVideo.play();
       if (playing && playing.then) playing.catch(function () { /* autoplay blocked */ });
@@ -152,11 +152,11 @@
         startLoop();
       } else {
         fetch(loopVideo.dataset.src, { method: "HEAD" })
-          .then(function (res) { if (res.ok) startLoop(); else if (loopTag) loopTag.textContent = "Reel coming soon"; })
-          .catch(function () { if (loopTag) loopTag.textContent = "Reel coming soon"; });
+          .then(function (res) { if (res.ok) startLoop(); else if (loopTag) loopTag.textContent = RN.T("reelComingSoon"); })
+          .catch(function () { if (loopTag) loopTag.textContent = RN.T("reelComingSoon"); });
       }
     } else if (loopTag) {
-      loopTag.textContent = "Reel coming soon";
+      loopTag.textContent = RN.T("reelComingSoon");
     }
 
     if (loopPlay) {
@@ -193,14 +193,14 @@
 
     stage.innerHTML = PHOTO_SLIDESHOW.map(function (s, i) {
       return '<button class="slide' + (i === 0 ? " is-active" : "") + '" type="button" data-index="' + i +
-        '" aria-label="Open photo ' + (i + 1) + ": " + esc(s.title) + '">' +
+        '" aria-label="' + esc(RN.T("openPhoto")) + ' ' + (i + 1) + ": " + esc(s.title) + '">' +
         '<img src="' + esc(s.image) + '" alt="' + esc(s.title) + '" loading="' + (i === 0 ? "eager" : "lazy") + '">' +
         "</button>";
     }).join("");
 
     dotsEl.innerHTML = PHOTO_SLIDESHOW.map(function (s, i) {
       return '<button class="slide-dot' + (i === 0 ? " is-active" : "") + '" type="button" data-go="' + i +
-        '" aria-label="Go to photo ' + (i + 1) + '"></button>';
+        '" aria-label="' + esc(RN.T("goToPhoto")) + ' ' + (i + 1) + '"></button>';
     }).join("");
 
     var slideNodes = $$(".slide", stage);
@@ -259,7 +259,7 @@
     if (pauseBtn) {
       pauseBtn.addEventListener("click", function () {
         userPaused = !userPaused;
-        pauseBtn.textContent = userPaused ? "Play" : "Pause";
+        pauseBtn.textContent = userPaused ? RN.T("play") : RN.T("pause");
         pauseBtn.setAttribute("aria-pressed", String(userPaused));
         if (userPaused) {
           stopTimer();
