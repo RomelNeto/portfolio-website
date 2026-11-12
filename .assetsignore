@@ -1,0 +1,9 @@
+# nunca enviar isto para o Cloudflare
+.git
+.git/**
+.wrangler
+.wrangler/**
+.gitignore
+.DS_Store
+*.command
+README.md

@@ -1,0 +1,10 @@
+// Cloudflare Worker with static assets — the whole folder is the site.
+// Deploy:  npx wrangler deploy
+{
+  "name": "portfolio-website",
+  "compatibility_date": "2026-11-12",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "none"
+  }
+}
