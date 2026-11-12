@@ -332,10 +332,7 @@
     var opts = options || {};
     var shapes = shapesFor(projects.length);
     container.innerHTML = projects.map(function (p, i) {
-      return cardMarkup(p, i, {
-        showCategory: opts.showCategory,
-        shape: opts.forceShape || shapes[i]
-      });
+      return cardMarkup(p, i, { showCategory: opts.showCategory, shape: shapes[i] });
     }).join("");
     $$("img", container).forEach(function (img) {
       img.addEventListener("error", function () {

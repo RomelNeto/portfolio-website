@@ -1931,27 +1931,4 @@ body.lb-open { overflow: hidden; }
 .embed-block p { color: rgba(255, 255, 255, .72); font-size: 14.5px; }
 .embed-block b { color: #fff; }
 
-/* ---------- 15l. Series strip (IN CANTO) ---------- */
-.series-wrap { margin-bottom: clamp(36px, 5vw, 56px); }
-.series-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--gap);
-}
-.series-grid .card {
-  grid-column: auto !important;
-  grid-row: auto !important;
-  max-width: none;
-}
-.series-grid .card-media { flex: none; aspect-ratio: 16 / 9; }
-.series-grid .card-title { font-size: 15px; }
-.series-grid .card-meta { font-size: 10.5px; }
-.series-grid .play-badge { width: 46px; height: 46px; }
-.series-grid .play-badge i { border-left-width: 11px; border-top-width: 7px; border-bottom-width: 7px; margin-left: 3px; }
-
-@media (max-width: 1080px) {
-  .series-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 780px) {
-  .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

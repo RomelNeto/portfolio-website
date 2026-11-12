@@ -37,12 +37,8 @@
   var shortsWrap = $("#shortsWrap");
   var shortsGrid = $("#shortsGrid");
   var shortsCount = $("#shortsCount");
-  var seriesWrap = $("#seriesWrap");
-  var seriesGrid = $("#seriesGrid");
-  var seriesCount = $("#seriesCount");
   var landscape = [];
   var portrait = [];
-  var series = [];
 
   function updateCount() {
     if (!countEl) return;
@@ -53,19 +49,8 @@
     visible = projects.filter(function (p) { return current === "all" || p.sector === current; });
     updateCount();
 
-    series = visible.filter(function (p) { return p.series; });
-    landscape = visible.filter(function (p) { return !p.vertical && !p.series; });
+    landscape = visible.filter(function (p) { return !p.vertical; });
     portrait = visible.filter(function (p) { return p.vertical; });
-
-    if (seriesWrap) {
-      seriesWrap.hidden = series.length === 0;
-      if (series.length) {
-        if (seriesCount) seriesCount.textContent = series.length + (series.length === 1 ? " episode" : " episodes");
-        RN.renderGrid(seriesGrid, series, { showCategory: false, forceShape: "s-series" });
-      } else {
-        seriesGrid.innerHTML = "";
-      }
-    }
 
     if (shortsWrap) {
       shortsWrap.hidden = portrait.length === 0;
@@ -119,7 +104,6 @@
   } else if (grid) {
     RN.bindGrid(grid, function () { return landscape; });
     if (shortsGrid) RN.bindGrid(shortsGrid, function () { return portrait; });
-    if (seriesGrid) RN.bindGrid(seriesGrid, function () { return series; });
     paint();
   }
 
