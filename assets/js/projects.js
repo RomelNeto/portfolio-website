@@ -60,8 +60,8 @@ const AREAS = {
     label: "Photography",
     kicker: "02",
     blurb: "Concerts, restaurants, team portraits and editorials — every shoot opens as a full set.",
-    cover: "assets/images/photos/music-vespa-maia/01.jpg",
-    sectors: ["Business", "Corporate", "Real estate", "Music", "Editorial"],
+    cover: "assets/images/photos/realestate-portfolio/01.jpg",
+    sectors: ["Real estate", "Corporate", "Business", "Music", "Editorial"],
     slideshow: true
   },
   design: {
@@ -69,7 +69,7 @@ const AREAS = {
     label: "Design",
     kicker: "03",
     blurb: "Logos and identity systems, from the mark to the merch it lives on.",
-    cover: "assets/images/design/identity-kedy/01.jpg",
+    cover: "assets/images/design/identity-calculame/01.jpg",
     sectors: ["Identity"]
   },
   motion: {
@@ -86,6 +86,81 @@ const AREA_ORDER = ["video", "photo", "design", "motion"];
 
 const PROJECTS = [
 /* ---------------- PHOTOGRAPHY ---------------- */
+  {
+    title: "Real Estate — Portfolio",
+    category: "photo",
+    sector: "Real estate",
+    year: "2024",
+    role: "Real estate photography · Retouch",
+    image: "assets/images/photos/realestate-portfolio/01.jpg",
+    gallery: [
+      "assets/images/photos/realestate-portfolio/01.jpg",
+      "assets/images/photos/realestate-portfolio/02.jpg",
+      "assets/images/photos/realestate-portfolio/03.jpg",
+      "assets/images/photos/realestate-portfolio/04.jpg",
+      "assets/images/photos/realestate-portfolio/05.jpg",
+      "assets/images/photos/realestate-portfolio/06.jpg",
+      "assets/images/photos/realestate-portfolio/07.jpg",
+      "assets/images/photos/realestate-portfolio/08.jpg",
+      "assets/images/photos/realestate-portfolio/09.jpg",
+      "assets/images/photos/realestate-portfolio/10.jpg",
+      "assets/images/photos/realestate-portfolio/11.jpg",
+      "assets/images/photos/realestate-portfolio/12.jpg",
+      "assets/images/photos/realestate-portfolio/13.jpg",
+      "assets/images/photos/realestate-portfolio/14.jpg",
+      "assets/images/photos/realestate-portfolio/15.jpg",
+      "assets/images/photos/realestate-portfolio/16.jpg",
+      "assets/images/photos/realestate-portfolio/17.jpg",
+      "assets/images/photos/realestate-portfolio/18.jpg",
+      "assets/images/photos/realestate-portfolio/19.jpg",
+      "assets/images/photos/realestate-portfolio/20.jpg",
+      "assets/images/photos/realestate-portfolio/21.jpg",
+      "assets/images/photos/realestate-portfolio/22.jpg",
+      "assets/images/photos/realestate-portfolio/23.jpg",
+      "assets/images/photos/realestate-portfolio/24.jpg"
+    ],
+    featured: true,
+    featuredRank: 2
+  },
+  {
+    title: "Mentoria ACR",
+    category: "photo",
+    sector: "Corporate",
+    year: "2026",
+    role: "Photography · Corporate event",
+    image: "assets/images/photos/corporate-mentoria/01.jpg",
+    gallery: [
+      "assets/images/photos/corporate-mentoria/01.jpg",
+      "assets/images/photos/corporate-mentoria/02.jpg",
+      "assets/images/photos/corporate-mentoria/03.jpg",
+      "assets/images/photos/corporate-mentoria/04.jpg",
+      "assets/images/photos/corporate-mentoria/05.jpg",
+      "assets/images/photos/corporate-mentoria/06.jpg",
+      "assets/images/photos/corporate-mentoria/07.jpg"
+    ],
+    featured: true,
+    featuredRank: 4
+  },
+  {
+    title: "Century21 — Agent Portraits",
+    category: "photo",
+    sector: "Corporate",
+    year: "2025",
+    role: "Photography · Retouch",
+    image: "assets/images/photos/corporate-century21/03.jpg",
+    gallery: [
+      "assets/images/photos/corporate-century21/01.jpg",
+      "assets/images/photos/corporate-century21/02.jpg",
+      "assets/images/photos/corporate-century21/03.jpg",
+      "assets/images/photos/corporate-century21/04.jpg",
+      "assets/images/photos/corporate-century21/05.jpg",
+      "assets/images/photos/corporate-century21/06.jpg",
+      "assets/images/photos/corporate-century21/07.jpg",
+      "assets/images/photos/corporate-century21/08.jpg"
+    ],
+    featured: true,
+    featuredRank: 9
+  },
   {
     title: "Rimar — Seaside Restaurant",
     category: "photo",
@@ -104,7 +179,7 @@ const PROJECTS = [
       "assets/images/photos/business-rimar/v2/08.jpg"
     ],
     featured: true,
-    featuredRank: 8
+    featuredRank: 10
   },
   {
     title: "Mahalo Sushi",
@@ -141,7 +216,7 @@ const PROJECTS = [
       "assets/images/photos/business-sintrense/07.jpg"
     ],
     featured: true,
-    featuredRank: 6
+    featuredRank: 8
   },
   {
     title: "U.Dance — Dance Event",
@@ -158,79 +233,6 @@ const PROJECTS = [
       "assets/images/photos/business-dance/05.jpg",
       "assets/images/photos/business-dance/06.jpg",
       "assets/images/photos/business-dance/07.jpg"
-    ],
-    featured: false
-  },
-  {
-    title: "Mentoria ACR",
-    category: "photo",
-    sector: "Corporate",
-    year: "2026",
-    role: "Photography · Corporate event",
-    image: "assets/images/photos/corporate-mentoria/01.jpg",
-    gallery: [
-      "assets/images/photos/corporate-mentoria/01.jpg",
-      "assets/images/photos/corporate-mentoria/02.jpg",
-      "assets/images/photos/corporate-mentoria/03.jpg",
-      "assets/images/photos/corporate-mentoria/04.jpg",
-      "assets/images/photos/corporate-mentoria/05.jpg",
-      "assets/images/photos/corporate-mentoria/06.jpg",
-      "assets/images/photos/corporate-mentoria/07.jpg"
-    ],
-    featured: false
-  },
-  {
-    title: "Century21 — Agent Portraits",
-    category: "photo",
-    sector: "Corporate",
-    year: "2025",
-    role: "Photography · Retouch",
-    image: "assets/images/photos/corporate-century21/03.jpg",
-    gallery: [
-      "assets/images/photos/corporate-century21/01.jpg",
-      "assets/images/photos/corporate-century21/02.jpg",
-      "assets/images/photos/corporate-century21/03.jpg",
-      "assets/images/photos/corporate-century21/04.jpg",
-      "assets/images/photos/corporate-century21/05.jpg",
-      "assets/images/photos/corporate-century21/06.jpg",
-      "assets/images/photos/corporate-century21/07.jpg",
-      "assets/images/photos/corporate-century21/08.jpg"
-    ],
-    featured: true,
-    featuredRank: 7
-  },
-  {
-    title: "Real Estate — Portfolio",
-    category: "photo",
-    sector: "Real estate",
-    year: "2024",
-    role: "Real estate photography · Retouch",
-    image: "assets/images/photos/realestate-portfolio/01.jpg",
-    gallery: [
-      "assets/images/photos/realestate-portfolio/01.jpg",
-      "assets/images/photos/realestate-portfolio/02.jpg",
-      "assets/images/photos/realestate-portfolio/03.jpg",
-      "assets/images/photos/realestate-portfolio/04.jpg",
-      "assets/images/photos/realestate-portfolio/05.jpg",
-      "assets/images/photos/realestate-portfolio/06.jpg",
-      "assets/images/photos/realestate-portfolio/07.jpg",
-      "assets/images/photos/realestate-portfolio/08.jpg",
-      "assets/images/photos/realestate-portfolio/09.jpg",
-      "assets/images/photos/realestate-portfolio/10.jpg",
-      "assets/images/photos/realestate-portfolio/11.jpg",
-      "assets/images/photos/realestate-portfolio/12.jpg",
-      "assets/images/photos/realestate-portfolio/13.jpg",
-      "assets/images/photos/realestate-portfolio/14.jpg",
-      "assets/images/photos/realestate-portfolio/15.jpg",
-      "assets/images/photos/realestate-portfolio/16.jpg",
-      "assets/images/photos/realestate-portfolio/17.jpg",
-      "assets/images/photos/realestate-portfolio/18.jpg",
-      "assets/images/photos/realestate-portfolio/19.jpg",
-      "assets/images/photos/realestate-portfolio/20.jpg",
-      "assets/images/photos/realestate-portfolio/21.jpg",
-      "assets/images/photos/realestate-portfolio/22.jpg",
-      "assets/images/photos/realestate-portfolio/23.jpg",
-      "assets/images/photos/realestate-portfolio/24.jpg"
     ],
     featured: false
   },
@@ -423,7 +425,6 @@ const PROJECTS = [
     ],
     featured: false
   },
-
 /* ---------------- DESIGN ---------------- */
   {
     title: "Calculame.pt — Logo & Icon",
@@ -543,7 +544,7 @@ const PROJECTS = [
     ar: "9/16",
     description: "Short-form content for Rimar's social channels. Shot on Sony A7 IV, edited in DaVinci Resolve.",
     featured: true,
-    featuredRank: 5
+    featuredRank: 7
   },
   {
     title: "Mahalo Sushi — Short 5",
@@ -640,7 +641,7 @@ const PROJECTS = [
     youtube: "WlSVD9kCp4k",
     description: "Training event for real estate consultants. Shot on Sony A7 IV, edited in DaVinci Resolve.",
     featured: true,
-    featuredRank: 1
+    featuredRank: 3
   },
   {
     title: "Real Estate Event — Aftermovie",
@@ -653,7 +654,7 @@ const PROJECTS = [
     youtube: "nYQSU5ySr0g",
     description: "Two-day training for real estate consultants. Edited in DaVinci Resolve from a multi-camera set-up.",
     featured: true,
-    featuredRank: 2
+    featuredRank: 1
   },
   {
     title: "Moita — Sports Complex Opening",
@@ -666,7 +667,7 @@ const PROJECTS = [
     youtube: "RIRvCtGmZkE",
     description: "Opening of the Moita sports complex. Gimbal work on Sony A7 IV for local government press.",
     featured: true,
-    featuredRank: 3
+    featuredRank: 5
   },
   {
     title: "Moita — Baião de Oxigénio",
@@ -691,7 +692,7 @@ const PROJECTS = [
     youtube: "BLhJ75e6I9c",
     description: "Aftermovie of Noite Branca da Moita. Gimbal work, Sony A7 IV.",
     featured: true,
-    featuredRank: 4
+    featuredRank: 6
   },
   {
     title: "AHDPP — Association Launch",
