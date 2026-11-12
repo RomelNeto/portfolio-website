@@ -1,4 +1,4 @@
-# Cloudflare Pages — headers
+# Cloudflare — headers
 # (não usar Referrer-Policy: no-referrer aqui: o YouTube/Vimeo devolvem
 #  o erro 153 quando o pedido chega sem referrer)
 
@@ -7,5 +7,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
+# sem versões nos nomes dos ficheiros, um max-age longo deixava o browser
+# a mostrar JS e fotos antigos durante 1 dia depois de cada deploy.
+# must-revalidate + ETag = 304 barato quando nada mudou, conteúdo novo quando muda.
 /assets/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
