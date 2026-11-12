@@ -135,8 +135,8 @@
 
       var subject = type + " — " + name;
       var body = "Name: " + name + "\nEmail: " + email + "\nProject: " + type + "\n\n" + msg;
-      window.location.href = "mailto:hello@romelneto.com?subject=" +
-        encodeURIComponent(subject) + "&body=" + encodeURIComponent(msg);
+      window.location.href = "mailto:netoromel@gmail.com?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       RN.toast("Opening your email app…");
     });
   }

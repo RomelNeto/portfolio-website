@@ -216,6 +216,13 @@ html[data-theme="light"] .i-moon { display: none; }
   backdrop-filter: blur(14px) saturate(1.2);
   border-bottom-color: var(--line);
 }
+/* Home only: the hero is media on a dark scrim, so the header keeps light ink until it scrolls */
+.head--on-dark:not(.is-scrolled) {
+  --text: #f3f0ea;
+  --line: rgba(243, 240, 234, .3);
+  --line-strong: rgba(243, 240, 234, .5);
+  color: var(--text);
+}
 .head-inner {
   display: flex;
   align-items: center;

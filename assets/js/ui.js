@@ -22,7 +22,7 @@
   var themeBtn = $("#themeBtn");
   var savedTheme = null;
   try { savedTheme = localStorage.getItem("rn-theme"); } catch (e) { /* private mode */ }
-  if (savedTheme === "light" || savedTheme === "dark") root.setAttribute("data-theme", savedTheme);
+  root.setAttribute("data-theme", savedTheme === "dark" ? "dark" : "light");
 
   function syncThemeLabel() {
     if (!themeBtn) return;
