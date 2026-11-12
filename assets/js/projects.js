@@ -92,16 +92,16 @@ const PROJECTS = [
     sector: "Business",
     year: "2026",
     role: "Photography · Retouch",
-    image: "assets/images/photos/business-rimar/01.jpg",
+    image: "assets/images/photos/business-rimar/v2/01.jpg",
     gallery: [
-      "assets/images/photos/business-rimar/01.jpg",
-      "assets/images/photos/business-rimar/02.jpg",
-      "assets/images/photos/business-rimar/03.jpg",
-      "assets/images/photos/business-rimar/04.jpg",
-      "assets/images/photos/business-rimar/05.jpg",
-      "assets/images/photos/business-rimar/06.jpg",
-      "assets/images/photos/business-rimar/07.jpg",
-      "assets/images/photos/business-rimar/08.jpg"
+      "assets/images/photos/business-rimar/v2/01.jpg",
+      "assets/images/photos/business-rimar/v2/02.jpg",
+      "assets/images/photos/business-rimar/v2/03.jpg",
+      "assets/images/photos/business-rimar/v2/04.jpg",
+      "assets/images/photos/business-rimar/v2/05.jpg",
+      "assets/images/photos/business-rimar/v2/06.jpg",
+      "assets/images/photos/business-rimar/v2/07.jpg",
+      "assets/images/photos/business-rimar/v2/08.jpg"
     ],
     featured: true,
     featuredRank: 8
@@ -1089,7 +1089,7 @@ const REEL = {
 
 /* The photography slideshow at the top of the Photography page. */
 const PHOTO_SLIDESHOW = [
-  { image: "assets/images/photos/business-rimar/01.jpg", title: "Rimar — Seaside Restaurant", caption: "Business · 2026" },
+  { image: "assets/images/photos/business-rimar/v2/01.jpg", title: "Rimar — Seaside Restaurant", caption: "Business · 2026" },
   { image: "assets/images/photos/business-mahalo/01.jpg", title: "Mahalo Sushi", caption: "Business · 2026" },
   { image: "assets/images/photos/corporate-mentoria/03.jpg", title: "Mentoria ACR", caption: "Corporate · 2026" },
   { image: "assets/images/photos/realestate-portfolio/02.jpg", title: "Real Estate — Portfolio", caption: "Real estate · 2024" },
