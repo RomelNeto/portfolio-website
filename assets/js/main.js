@@ -14,6 +14,8 @@
   /* ---------------- Selected work ---------------- */
   var grid = $("#workGrid");
   var featured = PROJECTS.filter(function (p) { return p.featured; });
+  /* home order: set with featuredRank in projects.js (video first, then photo) */
+  featured.sort(function (a, b) { return (a.featuredRank || 99) - (b.featuredRank || 99); });
   if (grid && featured.length) {
     RN.renderGrid(grid, featured, { showCategory: true });
     RN.bindGrid(grid, function () { return featured; });

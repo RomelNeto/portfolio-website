@@ -41,7 +41,7 @@
        youtube: "dQw4w9WgXcQ",
        gallery: [],
        description: "Two-day mentoring event, 12 speakers. Shot solo, delivered in 5 days.",
-       featured: true
+       featured: false
      }
    ========================================================================== */
 
@@ -100,9 +100,11 @@ const PROJECTS = [
       "assets/images/photos/business-rimar/04.jpg",
       "assets/images/photos/business-rimar/05.jpg",
       "assets/images/photos/business-rimar/06.jpg",
-      "assets/images/photos/business-rimar/07.jpg"
+      "assets/images/photos/business-rimar/07.jpg",
+      "assets/images/photos/business-rimar/08.jpg"
     ],
-    featured: true
+    featured: true,
+    featuredRank: 8
   },
   {
     title: "Mahalo Sushi",
@@ -120,7 +122,7 @@ const PROJECTS = [
       "assets/images/photos/business-mahalo/06.jpg",
       "assets/images/photos/business-mahalo/07.jpg"
     ],
-    featured: true
+    featured: false
   },
   {
     title: "Sintrense — Team Portraits",
@@ -138,7 +140,8 @@ const PROJECTS = [
       "assets/images/photos/business-sintrense/06.jpg",
       "assets/images/photos/business-sintrense/07.jpg"
     ],
-    featured: false
+    featured: true,
+    featuredRank: 6
   },
   {
     title: "U.Dance — Dance Event",
@@ -174,7 +177,7 @@ const PROJECTS = [
       "assets/images/photos/corporate-mentoria/06.jpg",
       "assets/images/photos/corporate-mentoria/07.jpg"
     ],
-    featured: true
+    featured: false
   },
   {
     title: "Century21 — Agent Portraits",
@@ -182,7 +185,7 @@ const PROJECTS = [
     sector: "Corporate",
     year: "2025",
     role: "Photography · Retouch",
-    image: "assets/images/photos/corporate-century21/01.jpg",
+    image: "assets/images/photos/corporate-century21/03.jpg",
     gallery: [
       "assets/images/photos/corporate-century21/01.jpg",
       "assets/images/photos/corporate-century21/02.jpg",
@@ -193,7 +196,8 @@ const PROJECTS = [
       "assets/images/photos/corporate-century21/07.jpg",
       "assets/images/photos/corporate-century21/08.jpg"
     ],
-    featured: false
+    featured: true,
+    featuredRank: 7
   },
   {
     title: "Real Estate — Portfolio",
@@ -228,7 +232,7 @@ const PROJECTS = [
       "assets/images/photos/realestate-portfolio/23.jpg",
       "assets/images/photos/realestate-portfolio/24.jpg"
     ],
-    featured: true
+    featured: false
   },
   {
     title: "Vespa Maia — Tokyo Lisboa",
@@ -246,7 +250,7 @@ const PROJECTS = [
       "assets/images/photos/music-vespa-maia/06.jpg",
       "assets/images/photos/music-vespa-maia/07.jpg"
     ],
-    featured: true
+    featured: false
   },
   {
     title: "Wicked Session",
@@ -468,7 +472,7 @@ const PROJECTS = [
       "assets/images/design/identity-kedy/03.jpg",
       "assets/images/design/identity-kedy/04.jpg"
     ],
-    featured: true
+    featured: false
   },
   {
     title: "Stream Media Solutions — Identity",
@@ -538,7 +542,8 @@ const PROJECTS = [
     vertical: true,
     ar: "9/16",
     description: "Short-form content for Rimar's social channels. Shot on Sony A7 IV, edited in DaVinci Resolve.",
-    featured: false
+    featured: true,
+    featuredRank: 5
   },
   {
     title: "Mahalo Sushi — Short 5",
@@ -634,7 +639,8 @@ const PROJECTS = [
     gallery: [],
     youtube: "WlSVD9kCp4k",
     description: "Training event for real estate consultants. Shot on Sony A7 IV, edited in DaVinci Resolve.",
-    featured: true
+    featured: true,
+    featuredRank: 1
   },
   {
     title: "Real Estate Event — Aftermovie",
@@ -646,7 +652,8 @@ const PROJECTS = [
     gallery: [],
     youtube: "nYQSU5ySr0g",
     description: "Two-day training for real estate consultants. Edited in DaVinci Resolve from a multi-camera set-up.",
-    featured: false
+    featured: true,
+    featuredRank: 2
   },
   {
     title: "Moita — Sports Complex Opening",
@@ -658,7 +665,8 @@ const PROJECTS = [
     gallery: [],
     youtube: "RIRvCtGmZkE",
     description: "Opening of the Moita sports complex. Gimbal work on Sony A7 IV for local government press.",
-    featured: false
+    featured: true,
+    featuredRank: 3
   },
   {
     title: "Moita — Baião de Oxigénio",
@@ -682,7 +690,8 @@ const PROJECTS = [
     gallery: [],
     youtube: "BLhJ75e6I9c",
     description: "Aftermovie of Noite Branca da Moita. Gimbal work, Sony A7 IV.",
-    featured: false
+    featured: true,
+    featuredRank: 4
   },
   {
     title: "AHDPP — Association Launch",
@@ -994,7 +1003,7 @@ const PROJECTS = [
     gallery: [],
     youtube: "PbHMxaoyteQ",
     description: "Music video for TraPunKidz. Shot on Sony A7 IV, edited and graded in DaVinci Resolve.",
-    featured: true
+    featured: false
   },
   {
     title: "TraPunKidz — Rockstar",

@@ -7,3 +7,6 @@ Portfólio com página para cada área (1).html
 
 # Cloudflare local state
 .wrangler
+
+# CV pessoal (inclui telefone e email) - descomenta se quiseres publicar em /cv
+/cv

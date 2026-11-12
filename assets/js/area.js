@@ -110,6 +110,23 @@
     paint();
   }
 
+  /* Deep link to a sector: /photography?sector=Real%20estate */
+  if (filtersEl) {
+    var wantedSector = "";
+    try {
+      wantedSector = new URLSearchParams(location.search).get("sector") || "";
+    } catch (e) { /* very old browser */ }
+    if (wantedSector) {
+      var chips = $$("[data-sector]", filtersEl);
+      for (var ci = 0; ci < chips.length; ci++) {
+        if (chips[ci].dataset.sector.toLowerCase() === wantedSector.toLowerCase()) {
+          chips[ci].click();
+          break;
+        }
+      }
+    }
+  }
+
   /* ---------------- Video: looping showreel ---------------- */
   var loop = $("#reelLoop");
   if (loop) {
